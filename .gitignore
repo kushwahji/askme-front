@@ -1,3 +1,32 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@kushwahji 
+kushwahji
+/
+asmequestions
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+asmequestions/.gitignore
+
+kushwahji blog
+Latest commit 5c03e5c 2 days ago
+ History
+ 1 contributor
+44 lines (37 sloc)  540 Bytes
+
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
@@ -42,3 +71,18 @@ yarn-error.log
 # System Files
 .DS_Store
 Thumbs.db
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+You have no unread notifications
