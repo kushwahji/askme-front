@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  api_url: 'https://askmequestion-app.herokuapp.com/api'
+  api_url: 'http://localhost:8000/api'
 };

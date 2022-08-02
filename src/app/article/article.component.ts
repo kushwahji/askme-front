@@ -84,6 +84,8 @@ export class ArticleComponent implements OnInit {
       .subscribe(comments => this.comments = comments);
   }
 
+  
+
   addComment() {
     this.isSubmitting = true;
     this.commentFormErrors = {};

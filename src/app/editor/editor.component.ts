@@ -48,6 +48,7 @@ export class EditorComponent implements OnInit {
   addTag() {
     // retrieve tag control
     const tag = this.tagField.value;
+    console.info("TAG "+tag);
     // only add tag if it does not exist yet
     if (this.article.tagList.indexOf(tag) < 0) {
       this.article.tagList.push(tag);

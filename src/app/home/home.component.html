@@ -1,30 +1,27 @@
-<div class="home-page">
-
-  <div class="banner" *appShowAuthed="false">
-    <div class="container">
-      <h1 class="logo-font">AskMeQuestion</h1>
-      <p>A place to share your <i>Angular</i> knowledge.</p>
+<div class="container-fluid">
+  <div class="jumbotron text-center" *appShowAuthed="false">
+    <div class="container text-center">
+      <h1><b>AskMeQuestion</b></h1>
+      <p>Explore <b>Technical</b> topics and other disciplines across communities</p>
     </div>
   </div>
-
-  <div class="container page">
+  <div class="container">
     <div class="row">
-
       <div class="col-md-9">
         <div class="feed-toggle">
           <ul class="nav nav-pills outline-active">
             <li class="nav-item">
               <a class="nav-link"
+                 [ngClass]="{'active': listConfig.type === 'all' && !listConfig.filters.tag}"
+                 (click)="setListTo('all')">
+                 All Questions
+              </a>
+            </li>
+            <li class="nav-item" *appShowAuthed="true">
+              <a class="nav-link"
                  [ngClass]="{'active': listConfig.type === 'feed'}"
                  (click)="setListTo('feed')">
                  Your Feed
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"
-                 [ngClass]="{'active': listConfig.type === 'all' && !listConfig.filters.tag}"
-                 (click)="setListTo('all')">
-                 Global Feed
               </a>
             </li>
             <li class="nav-item" [hidden]="!listConfig.filters.tag">
@@ -33,21 +30,17 @@
               </a>
             </li>
             <li class="nav-item pull-xs-right">
-              <a class="nav-primary" routerLink="/editor">
-                <i class="ion-compose"></i>&nbsp;Ask Me Question
+              <a class="nav-warning" routerLink="/editor" routerLinkActive="active">
+                <b><i class="ion-compose"></i>&nbsp;Ask Me Question</b>
               </a>
             </li>
-            
           </ul>
         </div>
-
         <app-article-list [limit]="10" [config]="listConfig"></app-article-list>
       </div>
-
       <div class="col-md-3">
         <div class="sidebar">
           <p>Popular Tags</p>
-
           <div class="tag-list">
             <a *ngFor="let tag of tags"
                (click)="setListTo('all', {tag: tag})"
@@ -65,7 +58,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>

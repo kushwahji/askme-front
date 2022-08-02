@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
-import { User, UserService } from '../../core';
+import { ArticlesService, User, UserService } from '../../core';
 
 @Component({
   selector: 'app-layout-header',
   templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit {
+  title: any;
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private articleService : ArticlesService,
   ) {}
 
   currentUser: User;
@@ -20,4 +22,10 @@ export class HeaderComponent implements OnInit {
       }
     );
   }
+  
+  search(title : string) {
+    this.articleService.search(this.title)
+      .subscribe(comments => this.title = this.title);
+  }
+  
 }

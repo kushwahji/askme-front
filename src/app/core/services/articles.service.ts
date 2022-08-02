@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { ApiService } from './api.service';
 import { Article, ArticleListConfig } from '../models';
-import { map } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 @Injectable()
 export class ArticlesService {
@@ -31,6 +31,10 @@ export class ArticlesService {
   get(slug): Observable<Article> {
     return this.apiService.get('/articles/' + slug)
       .pipe(map(data => data.article));
+  }
+
+  search(slug): Observable<Article> {
+    return this.apiService.get('/articles').pipe(filter(f=>f.title==slug || f.body==slug || f.slug==slug || f.description==slug),map(data => data.article));
   }
 
   destroy(slug) {
